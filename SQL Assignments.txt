@@ -1,0 +1,84 @@
+1. Write a mysql statement to find the concatenated first_name, last_name where the age of the
+employee is greater than 30.
+
+	SELECT first_name || ‘ ‘ || last_name 
+	FROM employee_table
+	WHERE age > 30
+
+
+	SELECT CONCAT(CONCAT(first_name, ‘ ‘), last_name)
+	FROM employee
+	WHERE age > 30
+
+
+2. Write a mysql statement to get user, current date and mysql version.
+
+	User:   
+	SELECT * FROM user_users
+		
+	Current date: 
+	SELECT sysdate FROM DUAL
+
+	Version: 
+	SELECT * from v$version
+
+
+3.Write a mysql statement to get item id, item, price of the most expensive item.
+
+	SELECT item_id, item, price
+	FROM item
+	WHERE  price = (SELECT max(price) FROM item)
+
+
+
+4. Write a mysql statement to select data of only CS and IT departments.
+
+	SELECT * FROM table
+	WHERE department IN (‘CS’, ‘IT’)
+
+
+
+5.Write a mysql statement to determine the age of each of the students.
+	
+	SELECT name,  trunc(MONTHS_BETWEEN(sysdate,  TO_DATE(birth, ‘yyyy-mm-dd’)))
+	FROM table
+
+
+6. Write a mysql statement to select data of all departments in descending order by age.
+
+	SELECT * FROM table
+	ORDER BY age DESC
+
+
+7. Write a mysql statement to retrieve name beginning with 'm'.
+
+	SELECT name FROM table
+	WHERE name LIKE  upper(‘m%’)
+
+
+8. Write a mysql statement to find the name, birth, department name, department block from the
+given tables.
+
+	SELECT name, birth, dept_name, dept_block
+	FROM table1, table2
+	WHERE table1.dept_id = table2.dept_id
+
+
+9. Write a mysql statement to get name of students containing exactly four characters.
+
+	SELECT name FROM student
+	WHERE LENGTH(name) = 4
+
+
+10.Fetch the nth highest and nth lowest paid salary of the employee.
+
+	SELECT emp_name, salary
+	FROM empsalary
+	WHERE salary = (SELECT max(salary) FROM empsalary)
+	OR salary = (SELECT min(salary) FROM empsalary)
+
+
+
+		
+		
+
