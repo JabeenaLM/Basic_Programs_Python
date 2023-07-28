@@ -85,7 +85,7 @@ ascending customer_id.
 	order by c.customer_id
 
 
-9.  From the following tables write a SQL query to find those customers with a
+9. From the following tables write a SQL query to find those customers with a
 grade less than 300. Return cust_name, customer city, grade, Salesman,
 salesmancity. The result should be ordered by ascending customer_id.
 
